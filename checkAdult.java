@@ -9,5 +9,7 @@ public class checkAdult {
                 System.out.println("Person is an adult.");
             } else {
                 System.out.println("Person is not an adult.");
+                    }
+                }
             }
         }
