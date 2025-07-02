@@ -7,5 +7,6 @@ public class patternPrinting {
             }
             System.out.println();
         }
+   
     }
 }
