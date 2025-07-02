@@ -15,5 +15,6 @@ public class recPattern {
                 System.out.println();
             }
         }
+   
     }
 }
