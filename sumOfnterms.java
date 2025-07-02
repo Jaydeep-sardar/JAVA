@@ -15,4 +15,5 @@ public class sumOfnterms {
         System.out.println("Sum of first " + n + " natural numbers is: " + sum);
         sc.close();
     }
+    
 }
