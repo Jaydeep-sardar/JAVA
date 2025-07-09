@@ -10,6 +10,13 @@ public class PalindromeCheck {
             } else {
                 System.out.println(str + " is not a palindrome.");
             }
+            System.out.print("Enter a number: ");
+            int num = sc.nextInt();
+            if (isPalindrome(num)) {
+                System.out.println(num + " is a palindrome number.");
+            } else {
+                System.out.println(num + " is not a palindrome number.");
+            }
         }
     }
 
@@ -21,5 +28,16 @@ public class PalindromeCheck {
             right--;
         }
         return true;
+    }
+
+    // Check if a number is palindrome
+    static boolean isPalindrome(int num) {
+        int original = num;
+        int reversed = 0;
+        while (num > 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+        return original == reversed;
     }
 }
