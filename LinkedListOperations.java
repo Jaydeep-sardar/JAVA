@@ -69,6 +69,18 @@ public class LinkedListOperations {
         head = prev;
     }
 
+    // Find the middle element of the linked list
+    int findMiddle() {
+        if (head == null) return -1; // or throw exception
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow.data;
+    }
+
     public static void main(String[] args) {
         LinkedListOperations list = new LinkedListOperations();
         list.insert(10);
@@ -85,5 +97,6 @@ public class LinkedListOperations {
         list.reverse();
         System.out.print("List after reversing: ");
         list.printList();
+        System.out.println("Middle element: " + list.findMiddle());
     }
 }
