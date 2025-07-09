@@ -55,6 +55,20 @@ public class LinkedListOperations {
         System.out.println("null");
     }
 
+    // Reverse the linked list
+    void reverse() {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+
     public static void main(String[] args) {
         LinkedListOperations list = new LinkedListOperations();
         list.insert(10);
@@ -68,5 +82,8 @@ public class LinkedListOperations {
         list.printList();
         System.out.println("Search 30: " + list.search(30));
         System.out.println("Search 100: " + list.search(100));
+        list.reverse();
+        System.out.print("List after reversing: ");
+        list.printList();
     }
 }
