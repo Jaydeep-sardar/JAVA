@@ -26,6 +26,15 @@ public class StackUsingCollectionFramework {
         System.out.println(data + " pushed at bottom of stack");
     }
 
+    // Reverse the stack using recursion
+    public void reverse() {
+        if (!stack.isEmpty()) {
+            int temp = stack.pop();
+            reverse();
+            pushAtBottom(temp);
+        }
+    }
+
     // Pop element from stack
     public int pop() {
         if (stack.isEmpty()) {
@@ -62,5 +71,9 @@ public class StackUsingCollectionFramework {
         stack.push(40);
         stack.pushAtBottom(5);
         System.out.println("Stack after pushing 5 at bottom: " + stack.stack);
+
+        // Reverse stack example
+        stack.reverse();
+        System.out.println("Stack after reversing: " + stack.stack);
     }
 }
