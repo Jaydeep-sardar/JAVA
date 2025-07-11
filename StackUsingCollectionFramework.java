@@ -14,6 +14,18 @@ public class StackUsingCollectionFramework {
         System.out.println(data + " pushed to stack");
     }
 
+    // Push element at the bottom of the stack
+    public void pushAtBottom(int data) {
+        if (stack.isEmpty()) {
+            stack.push(data);
+        } else {
+            int temp = stack.pop();
+            pushAtBottom(data);
+            stack.push(temp);
+        }
+        System.out.println(data + " pushed at bottom of stack");
+    }
+
     // Pop element from stack
     public int pop() {
         if (stack.isEmpty()) {
@@ -45,5 +57,10 @@ public class StackUsingCollectionFramework {
         System.out.println(stack.pop() + " popped from stack");
         System.out.println("Top element is " + stack.peek());
         System.out.println("Is stack empty? " + stack.isEmpty());
+
+        // Push at bottom example
+        stack.push(40);
+        stack.pushAtBottom(5);
+        System.out.println("Stack after pushing 5 at bottom: " + stack.stack);
     }
 }
